@@ -165,7 +165,7 @@ int main(int argc, char** argv) {
 
     ros::init(argc, argv, "bluerov_joy");
     ros::NodeHandle nodeHandle;
-    ros::Rate rate(10);
+    ros::Rate rate(50);
 
     BlueRov2 BlueRov2_control;
 
@@ -180,4 +180,5 @@ int main(int argc, char** argv) {
     ros::spin();
     cv::destroyWindow("BlueRov2_view");
     return 0;
+
 };
