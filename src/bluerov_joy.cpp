@@ -5,7 +5,7 @@
 #include <image_transport/image_transport.h>
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
-#include<opencv2/opencv.hpp>
+#include <opencv2/opencv.hpp>
 
 
 union JOYSTICK{
@@ -111,9 +111,11 @@ void BlueRov2::joyCallback(const sensor_msgs::Joy::ConstPtr& joy) {
 
     for(unsigned char i = 0 ; i < 8; i++){
         joysticks.num[i] = joy->axes[i];
+        ROS_INFO("Axes %d: %d", i, joysticks.num[i]);
     }
     for(unsigned char i = 0; i < 11 ; i++){
         botones.num[i] = joy->buttons[i];
+        ROS_INFO("Boton %d: %d", i, botones.num[i]);
     }
 };
 
